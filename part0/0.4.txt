@@ -1,0 +1,21 @@
+0.4 New note diagram
+    participant browser
+    participant server
+
+
+    browser->>server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    server-->>browser: HTTP status code 302
+
+    note over browser: server asks the browser to do a HTTP GET request to the address defined in the header's location
+
+    browser->>server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+    server-->>browser: HTML code
+
+    browser->>server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    server-->>browser: main.css
+
+    browser->>server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    server-->>browser: main.js
+
+    browser->>server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    server-->>browser: [{ content: "Hmm...", date: "2023-03-08" }, ...]

@@ -1,0 +1,6 @@
+0.6 New note in Single page app diagram
+
+    note over browser: new note is added to notes array and the page is rerendered
+    
+    browser->>server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    server-->>browser: HTTP status code 201
